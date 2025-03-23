@@ -3,6 +3,7 @@
 *.tmp
 *.log
 *.remap
+*.godot~
 
 # Pastas e arquivos de cache
 .godot/
@@ -19,4 +20,13 @@ Thumbs.db
 *.exe
 *.pdb
 *.obj
-*.mono/
+.mono/
+
+# Configurações específicas de build e exportações
+export/
+*.apk
+*.ipa
+
+# Gerais para sistemas operacionais e editores de texto
+._*
+*.swp

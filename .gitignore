@@ -1,3 +1,22 @@
-# Godot 4+ specific ignores
+# Arquivos gerados automaticamente pela Godot
+*.import
+*.tmp
+*.log
+*.remap
+
+# Pastas e arquivos de cache
 .godot/
-/android/
+.editor_settings-*.tres
+
+# Arquivos de sistema e IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Arquivos compilados (se usar scripts C#)
+*.dll
+*.exe
+*.pdb
+*.obj
+*.mono/

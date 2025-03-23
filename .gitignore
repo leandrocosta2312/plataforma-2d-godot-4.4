@@ -1,0 +1,32 @@
+# Arquivos gerados automaticamente pela Godot
+*.import
+*.tmp
+*.log
+*.remap
+*.godot~
+
+# Pastas e arquivos de cache
+.godot/
+.editor_settings-*.tres
+
+# Arquivos de sistema e IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Arquivos compilados (se usar scripts C#)
+*.dll
+*.exe
+*.pdb
+*.obj
+.mono/
+
+# Configurações específicas de build e exportações
+export/
+*.apk
+*.ipa
+
+# Gerais para sistemas operacionais e editores de texto
+._*
+*.swp

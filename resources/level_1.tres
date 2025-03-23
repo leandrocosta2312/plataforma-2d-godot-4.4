@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogResource" load_steps=2 format=3 uid="uid://dakt2slo8gphp"]
+
+[ext_resource type="Script" uid="uid://dotla26o1ptmr" path="res://scripts/resources/dialog_resource.gd" id="1_62fdt"]
+
+[resource]
+script = ExtResource("1_62fdt")
+lines = Array[String](["Ola Aventureiro...", "SEJA BEM VINDO", "Uma grande aventura....", "...TE ESPERA!!!"])
+position = Vector2(0, 0)
+current_line = 0
+metadata/_custom_type_script = "uid://dotla26o1ptmr"

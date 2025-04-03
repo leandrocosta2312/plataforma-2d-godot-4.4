@@ -157,6 +157,7 @@ volume_db = -30.0
 stream = ExtResource("8_opo22")
 
 [connection signal="area_entered" from="magnetism" to="." method="_on_magnetism_area_entered"]
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="head_colision" to="." method="_on_head_colision_body_entered"]
 [connection signal="body_entered" from="foot_colision" to="." method="_on_foot_colision_body_entered"]

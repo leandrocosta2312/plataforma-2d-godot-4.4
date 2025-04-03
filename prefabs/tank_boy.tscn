@@ -391,10 +391,6 @@ wait_time = 2.0
 
 [node name="missile_cooldown" type="Timer" parent="."]
 
-[node name="fire_trail_cooldown" type="Timer" parent="."]
-wait_time = 0.25
-autostart = true
-
 [node name="hit_box" type="Area2D" parent="."]
 collision_layer = 16
 
@@ -425,7 +421,6 @@ show_behind_parent = true
 [connection signal="animation_started" from="anim_tree" to="." method="_on_anim_tree_animation_started"]
 [connection signal="timeout" from="bomb_cooldown" to="." method="_on_bomb_cooldown_timeout"]
 [connection signal="timeout" from="missile_cooldown" to="." method="_on_missile_cooldown_timeout"]
-[connection signal="timeout" from="fire_trail_cooldown" to="." method="_on_fire_trail_cooldown_timeout"]
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
 [connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
 [connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]

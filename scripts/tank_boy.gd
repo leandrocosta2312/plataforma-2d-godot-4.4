@@ -4,14 +4,10 @@ const SPEED = 5500
 const BOMB_SCENE = preload("res://prefabs/bomb.tscn")
 const MISSILE_SCENE = preload("res://prefabs/missile.tscn")
 const LOSE_BOSS = preload("res://prefabs/lose_boss.tscn")
-const FIRE_TRAIL = preload("res://particules/fire_trail.tscn")
-const MAX_PARTICLES = 50
-const PARTICLE_SPACING = 20
 
 
 enum Direction { RIGTH, LEFT }
 var direction = -1
-var fire_trail_list = []
 
 @onready var anim_tree: AnimationTree = $anim_tree
 @onready var state_machine = anim_tree["parameters/playback"]
@@ -30,11 +26,12 @@ signal boss_has_died
 signal has_started
 
 var stats = {"turn_count": 0, "missile_count": 0, "bomb_count": 0, "lifes": 1}
-var can_launch = {"missile": true, "bomb": true, "fire": true}
+var can_launch = {"missile": true, "bomb": true}
 var player_hit = false
 
 func _ready() -> void:
 	set_physics_process(false)
+	$fire_trail_particles.default()
 
 func _physics_process(delta: float) -> void:
 	$fire_trail_particles.emitting = velocity.length() > 0
@@ -56,17 +53,7 @@ func handle_moving_state(delta):
 	collision_hit_box.set_deferred("disabled", true)
 	if wall_detector.is_colliding():
 		flip_enemy()
-	velocity.x = direction * SPEED * delta
-	
-func launch_fire():
-	if can_launch["fire"]:
-		var fire_trail = FIRE_TRAIL.instantiate()
-		fire_trail.global_position = global_position
-		fire_trail.direction = direction
-		fire_trail.emitting = true
-		add_sibling(fire_trail)	
-		can_launch["fire"] = false
-	
+	velocity.x = direction * SPEED * delta	
 
 func handle_missile_attack_state():
 	velocity.x = 0

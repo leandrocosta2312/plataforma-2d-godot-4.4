@@ -146,3 +146,9 @@ func _on_step_sfx_finished() -> void:
 func _on_magnetism_area_entered(area: Area2D) -> void:
 	if (area.is_in_group("coin")):
 		area.go_to_player(self)
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if (area.is_in_group("fireball")):
+		var direction =  Vector2((global_position.x - area.global_position.x) * 20, -200)
+		take_damage(direction)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ojw6iauf4aag"]
 
 [ext_resource type="Script" uid="uid://c3o41c2d6o18d" path="res://scripts/goal.gd" id="1_15wru"]
-[ext_resource type="Texture2D" uid="uid://bvoxss826m7qq" path="res://assets/Mini FX, Items & UI/Food Items/Sushi_Variety (16 x 16).png" id="1_lm043"]
+[ext_resource type="Texture2D" uid="uid://b3fbk1i2hlavp" path="res://assets/Mini FX, Items & UI/Food Items/Sushi_Variety (16 x 16).png" id="1_lm043"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm043"]
 size = Vector2(25, 20)

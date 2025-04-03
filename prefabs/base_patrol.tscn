@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=3 uid="uid://dltdotdix2s1"]
 
 [ext_resource type="Script" uid="uid://b0mte6q1v1nyo" path="res://scripts/rocket_cherry.gd" id="1_2ebgl"]
-[ext_resource type="Texture2D" uid="uid://drbxtgbnxwe1m" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Flying (16 x 32).png" id="1_7xp4i"]
+[ext_resource type="Texture2D" uid="uid://cnog0mmvqnaau" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Flying (16 x 32).png" id="1_7xp4i"]
 [ext_resource type="Script" uid="uid://cuv1jruydbsr8" path="res://scripts/base_patrol.gd" id="1_bx4jk"]
 [ext_resource type="PackedScene" uid="uid://70qc03j7afs0" path="res://prefabs/cherry.tscn" id="2_ntda8"]
-[ext_resource type="Texture2D" uid="uid://dog1fjuw2vj8u" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Hurt_Falling (16 x 32).png" id="2_vccjs"]
+[ext_resource type="Texture2D" uid="uid://cujht7h8ytdax" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Hurt_Falling (16 x 32).png" id="2_vccjs"]
 [ext_resource type="PackedScene" uid="uid://bg31odca7mc0g" path="res://prefabs/hitbox.tscn" id="3_y1bl3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vccjs"]

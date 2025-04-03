@@ -3,6 +3,7 @@ extends CharacterBody2D
 const box_pieces = preload("res://prefabs/box_pieces.tscn")
 const coin_instance = preload("res://prefabs/coin_rigid.tscn")
 
+@onready var hit_box_sfx: AudioStreamPlayer = $hit_box_sfx
 @onready var anim = $anim as AnimationPlayer
 @onready var spawn_coin = $spawn_coin as Marker2D
 @export var pieces: PackedStringArray
@@ -11,6 +12,7 @@ const coin_instance = preload("res://prefabs/coin_rigid.tscn")
 
 func break_sprite(hitpoint: int):
 	hitpoints-=hitpoint
+	hit_box_sfx.play()
 	if (hitpoints >= 0):
 		anim.play("hit")
 		create_coin()

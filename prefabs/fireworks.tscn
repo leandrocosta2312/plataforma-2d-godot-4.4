@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c62gh81dmulte"]
+
+[ext_resource type="PackedScene" uid="uid://cxyirsr11kc22" path="res://particules/explosion.tscn" id="1_db5ue"]
+[ext_resource type="FontFile" uid="uid://mhmr8sfiaxp5" path="res://assets/font/RevMiniPixel.ttf" id="2_4d305"]
+
+[node name="fireworks" type="Node2D"]
+
+[node name="label" type="Label" parent="."]
+offset_left = 459.0
+offset_top = 276.0
+offset_right = 607.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0.839216, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0.929412, 0.203922, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_4d305")
+theme_override_font_sizes/font_size = 32
+text = "VICTORY!"
+
+[node name="explosion" parent="." instance=ExtResource("1_db5ue")]
+position = Vector2(631, 92)
+emitting = true
+one_shot = false
+trail_enabled = true
+
+[node name="explosion2" parent="." instance=ExtResource("1_db5ue")]
+position = Vector2(515, 155)
+emitting = true
+one_shot = false
+trail_enabled = true
+
+[node name="explosion5" parent="." instance=ExtResource("1_db5ue")]
+position = Vector2(422, 174)
+emitting = true
+one_shot = false
+
+[node name="explosion6" parent="." instance=ExtResource("1_db5ue")]
+position = Vector2(533, 232)
+emitting = true
+one_shot = false
+
+[node name="explosion3" parent="." instance=ExtResource("1_db5ue")]
+position = Vector2(396, 264)
+emitting = true
+one_shot = false
+trail_enabled = true
+
+[node name="explosion4" parent="." instance=ExtResource("1_db5ue")]
+position = Vector2(631, 186)
+emitting = true
+one_shot = false
+trail_enabled = true

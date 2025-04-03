@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://4kngfu2ffdll"]
 
-[ext_resource type="Texture2D" uid="uid://32duh0vpg7rs" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Coin (16 x 16).png" id="1_8bk7x"]
+[ext_resource type="Texture2D" uid="uid://c5hywnnbtk7x0" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Coin (16 x 16).png" id="1_8bk7x"]
 [ext_resource type="Script" uid="uid://cac5mya2ncf4e" path="res://scripts/coin.gd" id="1_ab8qe"]
-[ext_resource type="Texture2D" uid="uid://cp3k6fkntnu6s" path="res://assets/Mini FX, Items & UI/Effects/Yellow_Sparkle (16 x 16).png" id="1_h1t07"]
-[ext_resource type="AudioStream" uid="uid://7sktgcsqpvt4" path="res://sounds/collect_coin.wav" id="4_1we67"]
+[ext_resource type="Texture2D" uid="uid://bh1skxsxeg6qk" path="res://assets/Mini FX, Items & UI/Effects/Yellow_Sparkle (16 x 16).png" id="1_h1t07"]
+[ext_resource type="AudioStream" uid="uid://mw0c6ifp63mk" path="res://sounds/collect_coin.wav" id="4_1we67"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7xbt"]
 atlas = ExtResource("1_h1t07")
@@ -84,7 +84,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8bk7x"]
 radius = 8.0
 
-[node name="coin" type="Area2D"]
+[node name="coin" type="Area2D" groups=["coin"]]
 collision_layer = 8
 script = ExtResource("1_ab8qe")
 

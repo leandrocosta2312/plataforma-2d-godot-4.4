@@ -11,11 +11,15 @@ func _ready() -> void:
 	
 func _on_animation_finished(anim_name):
 	if anim_name == "fade_to_black":
-		on_transition_finished.emit()
 		anim.play("fade_to_normal")
+		on_transition_finished.emit()
 	elif anim_name == "fade_to_normal": 
 		color_rect.visible = false	
 	
 func transition():
 	color_rect.visible = true
 	anim.play("fade_to_black")
+	
+func transition_fade_in():
+	color_rect.visible = true
+	anim.play("fade_to_normal")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://70qc03j7afs0"]
 
-[ext_resource type="Texture2D" uid="uid://c4hb1i7uv0352" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Hopping (16 x 32).png" id="1_k2eo3"]
+[ext_resource type="Texture2D" uid="uid://3nuk588c5ahl" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Hopping (16 x 32).png" id="1_k2eo3"]
 [ext_resource type="Script" uid="uid://hndfh8ob4kl5" path="res://scripts/cherry.gd" id="1_ykbf0"]
-[ext_resource type="Texture2D" uid="uid://cd4egc0vjpo81" path="res://assets/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="2_5eoed"]
-[ext_resource type="Texture2D" uid="uid://cpfpf1lpqwvcs" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Hurt (16 x 32).png" id="2_6xfom"]
+[ext_resource type="Texture2D" uid="uid://c18fqraylxt8s" path="res://assets/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="2_5eoed"]
+[ext_resource type="Texture2D" uid="uid://b1wytkiptfabu" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Hurt (16 x 32).png" id="2_6xfom"]
 [ext_resource type="PackedScene" uid="uid://bg31odca7mc0g" path="res://prefabs/hitbox.tscn" id="4_35qxd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ykbf0"]

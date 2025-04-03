@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://they0mc6pp3o"]
+[gd_scene load_steps=3 format=3 uid="uid://they0mc6pp3o"]
 
 [ext_resource type="Script" uid="uid://c5b6u78e8wvc8" path="res://scripts/box_pieces.gd" id="1_li7nh"]
+[ext_resource type="AudioStream" uid="uid://dli0p7fl0aewr" path="res://sounds/break_box.wav" id="2_ajol6"]
 
 [node name="box_pieces" type="RigidBody2D"]
 script = ExtResource("1_li7nh")
@@ -8,5 +9,10 @@ script = ExtResource("1_li7nh")
 [node name="sprite" type="Sprite2D" parent="."]
 
 [node name="notify" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="break_box_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ajol6")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="screen_exited" from="notify" to="." method="_on_notify_screen_exited"]

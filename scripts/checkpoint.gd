@@ -16,3 +16,5 @@ func _on_anim_animation_finished() -> void:
 		is_checked = true
 		anim.play("checked")
 		GlobalManager.current_checkpoint = $respawn
+	if anim.animation == "checked":
+		$explosion.emitting = true

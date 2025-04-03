@@ -8,6 +8,7 @@ var flipped = false # Variável para evitar loops
 @onready var anim = $anim
 
 @export var enemy_score: int = 100 # Pontos dados ao player ao morrer
+@export var enemy_life: int =  1
 
 @export_group("Grounded Enemy Settings")
 @export var initial_direction = Direction.LEFT
@@ -21,8 +22,13 @@ var flipped = false # Variável para evitar loops
 @export var spawn_instance: PackedScene
 @export var spawn_instance_position: Marker2D
 
+signal hit_enemy
+
 func _ready_base():
-	print("Ready para ser implementado nas classes filhas caso necessario")
+	pass
+	
+func _physics_process_base(delta):
+	pass
 	
 func _ready() -> void:
 	_ready_base()
@@ -43,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		
 func spawn_new_enemy():
 	var instance_scene =  spawn_instance.instantiate()
-	get_tree().root.add_child(instance_scene)
+	get_tree().current_scene.add_child(instance_scene)
 	instance_scene.global_position = spawn_instance_position.global_position
 		
 func process_grounded_enemy(delta):
@@ -62,6 +68,8 @@ func process_grounded_enemy(delta):
 	else:
 		flipped = false # Reseta o estado quando a condição muda
 		
+	_physics_process_base(delta)
+		
 	move_and_slide()
 		
 
@@ -75,7 +83,11 @@ func animation_finished():
 	
 func animation_finished_grounded(anim_name: String):
 	if (anim_name == "hurt"):
-		kill_and_score()
+		enemy_life -= 1
+		if (enemy_life == 0):
+			kill_and_score()
+		else:
+			hit_enemy.emit()
 		
 func animation_started_grounded(anim_name: String):
 	if (anim_name == "hurt"):

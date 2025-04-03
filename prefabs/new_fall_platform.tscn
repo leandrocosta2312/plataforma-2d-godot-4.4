@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b25g7x3jv62jn"]
 
 [ext_resource type="Script" uid="uid://cfe31qd0nddyi" path="res://scripts/new_fall_platform.gd" id="1_bl256"]
-[ext_resource type="Texture2D" uid="uid://b6w5rp2a3sdqa" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/falling-platform-brown.png" id="2_bl256"]
+[ext_resource type="Texture2D" uid="uid://b8fpljth6qe23" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/falling-platform-brown.png" id="2_bl256"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl256"]
 size = Vector2(32, 16)
@@ -43,7 +43,7 @@ _data = {
 &"shake": SubResource("Animation_bl256")
 }
 
-[node name="platform" type="AnimatableBody2D"]
+[node name="platform" type="AnimatableBody2D" groups=["fall_platform"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_bl256")

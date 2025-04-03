@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://xrnvk3eepim3"]
+
+[ext_resource type="Script" uid="uid://dpgupjcqk82nm" path="res://scripts/fire_trail.gd" id="1_x7oma"]
+
+[sub_resource type="Gradient" id="Gradient_x7oma"]
+offsets = PackedFloat32Array(0, 0.377358, 0.792453, 0.969811)
+colors = PackedColorArray(1, 0, 0, 1, 0.952941, 0.462745, 0.196078, 1, 0.929412, 0.972549, 0.133333, 1, 0.883883, 0.925436, 0.985225, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g80m7"]
+gradient = SubResource("Gradient_x7oma")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bfrma"]
+lifetime_randomness = 0.94
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -5, 0)
+emission_shape = 1
+emission_sphere_radius = 10.0
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+gravity = Vector3(900, 0, 0)
+linear_accel_min = -12.88
+linear_accel_max = -1.85
+radial_accel_min = -40.0
+radial_accel_max = 50.0
+scale_min = 0.5
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_g80m7")
+anim_speed_min = -10.0
+anim_speed_max = 2.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfrma"]
+size = Vector2(106, 4)
+
+[node name="fire_trail_particles" type="GPUParticles2D"]
+amount = 1500
+lifetime = 0.5
+randomness = 1.0
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_bfrma")
+script = ExtResource("1_x7oma")
+
+[node name="area_detector" type="Area2D" parent="."]
+position = Vector2(3, -4)
+scale = Vector2(-1, -1)
+
+[node name="collision" type="CollisionShape2D" parent="area_detector"]
+position = Vector2(-49, -1)
+shape = SubResource("RectangleShape2D_bfrma")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="body_entered" from="area_detector" to="." method="_on_area_detector_body_entered"]

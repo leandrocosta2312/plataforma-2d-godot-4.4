@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Plataforma 2D Godot 4.4"
-run/main_scene="uid://cid2xe8axy8qe"
+run/main_scene="uid://28hdduw5fldk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=605
 config/icon="res://icon.svg"
@@ -21,11 +21,20 @@ config/icon="res://icon.svg"
 DialogManager="*res://scripts/singletons/dialog_manager.gd"
 GlobalManager="*res://scripts/singletons/Globals.gd"
 TransitionScreen="*res://prefabs/transition_screen.tscn"
+DamageNumbers="*res://scripts/singletons/DamageNumbers.gd"
 
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/scale=2.0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
+[global_group]
+
+fireball=""
+coin=""
 
 [input]
 
@@ -66,6 +75,7 @@ advance_message={
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="items"
 2d_physics/layer_5="hitbox"
+2d_physics/layer_6="bullet"
 2d_physics/layer_7="head_colider"
 
 [rendering]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqlvspf7m032i"]
+[gd_scene load_steps=14 format=3 uid="uid://dqlvspf7m032i"]
 
 [ext_resource type="Script" uid="uid://df1r2x8j35nav" path="res://scripts/checkpoint.gd" id="1_jmy7n"]
-[ext_resource type="Texture2D" uid="uid://dfs75bbdmhjs1" path="res://assets/Mini FX, Items & UI/Common Pick-ups/checkpoint.png" id="1_xsm40"]
-[ext_resource type="AudioStream" uid="uid://idvuanhlxx6j" path="res://sounds/checkpoint.wav" id="3_els25"]
+[ext_resource type="Texture2D" uid="uid://c8h7pk33eb7d5" path="res://assets/Mini FX, Items & UI/Common Pick-ups/checkpoint.png" id="1_xsm40"]
+[ext_resource type="AudioStream" uid="uid://b5ypbacmuq884" path="res://sounds/checkpoint.wav" id="3_els25"]
+[ext_resource type="PackedScene" uid="uid://cxyirsr11kc22" path="res://particules/explosion.tscn" id="4_t5h7x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8h541"]
 atlas = ExtResource("1_xsm40")
@@ -80,9 +81,8 @@ script = ExtResource("1_jmy7n")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_bf7gi")
-animation = &"unchecked"
+animation = &"checked"
 autoplay = "unchecked"
-frame_progress = 1.0
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
@@ -93,6 +93,9 @@ position = Vector2(0, -25)
 
 [node name="checkpoint_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_els25")
+
+[node name="explosion" parent="." instance=ExtResource("4_t5h7x")]
+position = Vector2(0, -16)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

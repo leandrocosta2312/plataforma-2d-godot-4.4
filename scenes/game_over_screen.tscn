@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://d10aoboh7t01q"]
+
+[ext_resource type="FontFile" uid="uid://mhmr8sfiaxp5" path="res://assets/font/RevMiniPixel.ttf" id="1_61w2s"]
+[ext_resource type="Texture2D" uid="uid://bk5cqyvh8c484" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Hurt (32 x 32).png" id="1_jw6e5"]
+[ext_resource type="Script" uid="uid://36mk4kf1paqb" path="res://scripts/game_over_screen.gd" id="1_wa2qn"]
+[ext_resource type="Theme" uid="uid://bwj5lp6dwis1l" path="res://themes/button_screen.tres" id="5_ej65t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgrm8"]
+
+[node name="gamer_over_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wa2qn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_jw6e5")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.857435, 0.893416, 1, 1)
+theme_override_colors/font_outline_color = Color(0.917647, 0.462745, 0.133333, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_61w2s")
+theme_override_font_sizes/font_size = 48
+text = "GAMER OVER"
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mgrm8")
+
+[node name="btn_restart" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_ej65t")
+theme_override_constants/outline_size = 12
+text = "RESTART"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mgrm8")
+
+[node name="btn_main_menu" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_ej65t")
+theme_override_constants/outline_size = 12
+text = "MAIN MENU"
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mgrm8")
+
+[node name="btn_quit" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_ej65t")
+theme_override_constants/outline_size = 12
+text = "QUIT GAME"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/btn_restart" to="." method="_on_btn_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/btn_main_menu" to="." method="_on_btn_main_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/btn_quit" to="." method="_on_btn_quit_pressed"]

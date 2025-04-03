@@ -9,6 +9,6 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if (body.name == "player")  && body.has_method("take_damage"):
+	if body is Player:
 		body.take_damage(Vector2(0, -250))
 		

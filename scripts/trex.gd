@@ -82,7 +82,7 @@ func _change_state(newState: EnemyState):
 	current_state = newState
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if (body.name == "player"):
+	if (body is Player):
 		if (enemy_life <= 1):
 			DamageNumbers.display_number(enemy_score, global_position)							
 		body.jump()

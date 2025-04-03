@@ -18,7 +18,7 @@ func _physics_process(delta):
 
 
 func has_collided_with(colision: KinematicCollision2D, body: CharacterBody2D) -> void:
-	if (body.name =="player" && !is_triggered):
+	if (body is Player && !is_triggered):
 		$anim.play("shake")
 		velocity = Vector2.ZERO
 		is_triggered = true

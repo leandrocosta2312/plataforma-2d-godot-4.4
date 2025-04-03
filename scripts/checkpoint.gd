@@ -6,7 +6,7 @@ extends Area2D
 var is_checked = false
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == GlobalManager.player.name and not is_checked:
+	if body is Player and not is_checked:
 		checkpoint_sfx.play()
 		anim.play("rising")
 

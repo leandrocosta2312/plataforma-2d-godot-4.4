@@ -32,6 +32,7 @@ anim_speed_max = 2.25
 size = Vector2(106, 4)
 
 [node name="fire_trail_particles" type="GPUParticles2D"]
+emitting = false
 amount = 1500
 lifetime = 0.5
 randomness = 1.0
@@ -47,5 +48,4 @@ scale = Vector2(-1, -1)
 position = Vector2(-49, -1)
 shape = SubResource("RectangleShape2D_bfrma")
 
-[connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="body_entered" from="area_detector" to="." method="_on_area_detector_body_entered"]

@@ -43,9 +43,9 @@ func set_player(playerToSet: CharacterBody2D):
 
 func _on_fall_zone_body_entered(body: Node2D) -> void:
 	var actualPlayer = GlobalManager.player
-	if (body.name == actualPlayer.name):
-		actualPlayer.take_damage(Vector2.ZERO)
-		if (actualPlayer.has_lifes()):
+	if (body is Player):
+		body.take_damage(Vector2.ZERO)
+		if (body.has_lifes()):
 			GlobalManager.respawn_player()
 	
 

@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 		
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "player":
+	if body is Player:
 		$anim.play("collect")
 		coin_sfx.play()
 		await $colision.call_deferred("queue_free")

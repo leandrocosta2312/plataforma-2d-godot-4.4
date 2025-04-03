@@ -2,7 +2,7 @@ extends Area2D
 @onready var tap_sfx: AudioStreamPlayer = $tap_sfx
 
 func _on_body_entered(body: Node2D) -> void:
-	if (body.name == "player"):
+	if (body is Player):
 		body.jump()
 		tap_sfx.play()
 		if get_parent() is EnemyBase:

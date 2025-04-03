@@ -718,7 +718,7 @@ position = Vector2(3641, 208)
 emitter_node_path = NodePath("../tank_boy")
 
 [node name="tank_boy" parent="." instance=ExtResource("15_pk3wa")]
-position = Vector2(3501, 206)
+position = Vector2(3504, 208)
 
 [node name="fall_zone" type="Area2D" parent="."]
 position = Vector2(779, 364)

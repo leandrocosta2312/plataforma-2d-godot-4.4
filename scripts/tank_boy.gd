@@ -174,9 +174,8 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 	stats["lifes"] -= 1
 
 func _on_player_detector_body_entered(body: Node2D) -> void:
-	if body.name == GlobalManager.player.name:
-		var direction =  Vector2((global_position.x - body.global_position.x) * 20, -200)	
-		body.take_damage(direction)
+	if body is Player:
+		body.take_damage(Vector2((global_position.x - body.global_position.x) * 20, -200)	)
 
 func _on_anim_tree_animation_started(anim_name: StringName) -> void:
 	if anim_name == "show_reveal" :

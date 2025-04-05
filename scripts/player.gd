@@ -13,10 +13,12 @@ var can_play_step_sound: bool = true
 var jump_velocity
 var gravity
 var fall_gravity
+var can_jump: bool
 
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var hurt_sfx: AudioStreamPlayer = $hurt_sfx
 @onready var anim = $anim as AnimatedSprite2D
+@onready var coyote_timer: Timer = $coyote_timer
 
 @export var lifes: int = 5
 @export var jump_height = 80
@@ -36,30 +38,29 @@ func _physics_process(delta: float) -> void:
 	velocity.x = 0	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.x = 0 
+		velocity.x = 0
+		
+	if is_on_floor():
+		can_jump = true
+	elif can_jump && coyote_timer.is_stopped():
+		coyote_timer.start()	
 		
 	# Handle jump.
-	if Input.is_action_just_pressed("up") and is_on_floor():
+	if Input.is_action_just_pressed("up") and can_jump:
 		jump()
 		jump_sfx.play()
-		
+	
 	if velocity.y > 0 or not Input.is_action_pressed("up"):
 		velocity.y += fall_gravity * delta
 	else:
 		velocity.y += gravity * delta
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right") 
 	if direction:
 		velocity.x = lerp(velocity.x, direction * SPEED, AIR_FRICTION)
-		# flip
 		anim.scale.x = direction
-		if is_on_floor() and can_play_step_sound:
-			can_play_step_sound = false
-			#step_sfx.play()
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED)	
 		
 	if (knockback_vector != Vector2.ZERO):
 		velocity = knockback_vector
@@ -152,3 +153,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if (area.is_in_group("fireball")):
 		var direction =  Vector2((global_position.x - area.global_position.x) * 20, -200)
 		take_damage(direction)
+
+
+func _on_coyote_timer_timeout() -> void:
+	can_jump = false

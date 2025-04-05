@@ -211,6 +211,7 @@ script = ExtResource("1_yso3o")
 metadata/player = &"teste"
 
 [node name="5" type="Parallax2D" parent="background"]
+physics_interpolation_mode = 1
 scroll_offset = Vector2(2, 11)
 repeat_size = Vector2(432, 300)
 repeat_times = 4
@@ -223,6 +224,7 @@ texture = ExtResource("4_or7x1")
 centered = false
 
 [node name="4" type="Parallax2D" parent="background"]
+physics_interpolation_mode = 1
 scroll_scale = Vector2(0.3, 1)
 scroll_offset = Vector2(2, 11)
 repeat_size = Vector2(432, 0)
@@ -235,6 +237,7 @@ texture = ExtResource("5_yso3o")
 centered = false
 
 [node name="3" type="Parallax2D" parent="background"]
+physics_interpolation_mode = 1
 scroll_scale = Vector2(0.4, 1)
 scroll_offset = Vector2(2, 11)
 repeat_size = Vector2(432, 300)
@@ -250,6 +253,7 @@ texture = ExtResource("6_tii1u")
 centered = false
 
 [node name="2" type="Parallax2D" parent="background"]
+physics_interpolation_mode = 1
 scroll_scale = Vector2(0.5, 1)
 scroll_offset = Vector2(2, 11)
 repeat_size = Vector2(432, 0)
@@ -262,6 +266,7 @@ texture = ExtResource("7_0heyt")
 centered = false
 
 [node name="1" type="Parallax2D" parent="background"]
+physics_interpolation_mode = 1
 scroll_scale = Vector2(0.9, 1)
 scroll_offset = Vector2(2, 11)
 repeat_size = Vector2(432, 0)
